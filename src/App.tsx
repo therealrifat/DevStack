@@ -1,3 +1,4 @@
+import BannerSection from "./component/BannerSection"
 import Navbar from "./component/Navbar"
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
   return (
     <>
       <Navbar />
+      <BannerSection />
     </>
   )
 }
