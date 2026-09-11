@@ -1,7 +1,9 @@
-import { FaStar } from "react-icons/fa";
+
 import type { Itechnology } from "../../TechnologyType";
 
 import { use } from "react";
+import TechnologyCard from "./TechnologyCard";
+import YourStack from "./YourStack";
 interface TechnoProps {
     dataPromise: Promise<Itechnology[]>
 }
@@ -18,7 +20,7 @@ const Technology = ({dataPromise}:TechnoProps) => {
                  <p className="text-[#475569]">Pick one technology per category to build your ideal stack.</p>
            </div>
            {/* // this is temporary technology card  */}
-           <div className=" grid grid-cols-3 space-y-10">
+            {/* <div className=" grid grid-cols-3 space-y-10">
             {
                 stacksData.map(stack => (
                     <div className=" w-87.5 h-75 border border-gray-300  rounded-2xl p-5 space-y-3" >
@@ -37,7 +39,18 @@ const Technology = ({dataPromise}:TechnoProps) => {
                     </div>
                 ))
             }
+           </div>  */}
+
+           <div className="flex gap-3">
+                <div className="grid grid-cols-3 space-y-2 gap-5">
+                    {stacksData.map(stack =>  <TechnologyCard  stack={stack} />)}
+                </div>
+                <div>
+                    <YourStack />
+                </div>
            </div>
+           
+
             
         </div>
     );
