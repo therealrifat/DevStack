@@ -14,10 +14,10 @@ const Technology = ({dataPromise}:TechnoProps) => {
     const stacksData = use(dataPromise)
     // console.log(stacksData)
     return (
-        <div className="max-w-11/12 mx-auto">
-           <div>
-                 <h2 className="text-4xl font-bold">Explore the <span className="text-pink-500">Technologies</span></h2>
-                 <p className="text-[#475569]">Pick one technology per category to build your ideal stack.</p>
+        <div className="md:max-w-11/12  mx-auto w-191 md:w-full">
+           <div className=" md:text-left text-center my-10 space-y-2">
+                 <h2 className="md:text-4xl text-5xl font-bold ">Explore the <span className="text-pink-500">Technologies</span></h2>
+                 <p className="text-[#475569] md:text-[18px] text-2xl">Pick one technology per category to build your ideal stack.</p>
            </div>
            {/* // this is temporary technology card  */}
             {/* <div className=" grid grid-cols-3 space-y-10">
@@ -41,11 +41,11 @@ const Technology = ({dataPromise}:TechnoProps) => {
             }
            </div>  */}
 
-           <div className="flex gap-3">
-                <div className="grid grid-cols-3 space-y-2 gap-5">
+           <div className=" flex md:flex-row flex-col md:gap-3  md:space-y-3 space-y-7">
+                <div className="grid md:grid-cols-3 grid-cols-1  mx-auto space-y-2 md:gap-5   ">
                     {stacksData.map(stack =>  <TechnologyCard  stack={stack} />)}
                 </div>
-                <div>
+                <div className="mx-auto md:mx-0">
                     <YourStack />
                 </div>
            </div>
