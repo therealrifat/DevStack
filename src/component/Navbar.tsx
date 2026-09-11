@@ -14,7 +14,7 @@ const Navbar = () => {
                 <li><a href="#">Contact</a></li>
             </ul>
             <div className=' flex gap-4'>
-                <button className='text-[#475569] '>Sign in</button>
+                <button className='text-[#475569] '>Sign In</button>
                 <button className='bg-pink-500 text-white py-2 px-5 rounded-2xl '>Sign Up</button>
             </div>
         </nav>
