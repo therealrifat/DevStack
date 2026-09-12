@@ -3,6 +3,7 @@ import { MdClear } from "react-icons/md";
 import type { Dispatch, SetStateAction } from "react";
 import type { Itechnology } from "../../TechnologyType";
 
+
 interface StackProps {
     addStack: Itechnology[]
     setAddStack: Dispatch<SetStateAction<Itechnology[]>>
@@ -10,22 +11,16 @@ interface StackProps {
 }
 
 const YourStack = ({addStack, setAddStack}:StackProps) => {
+    const handleStack =(technoCard :Itechnology) =>{
+        const removeStack = addStack.filter(stack => stack !== technoCard)
+        setAddStack(removeStack)
+    }
+
+
     return (
         <div className=" border border-gray-300 md:w-87.5 w-150 rounded-2xl p-3">
             <h3 className="font-semibold text-[20px]">Your Stack</h3>
             <p className=" text-[#475569]">{addStack.length > 0 ? `${addStack.length} Technology Selected` : "No technologies selected yet."} </p>
-             {/* <div className=" space-y-2">
-                {addStack.map(stack => 
-                    <div className="flex gap-2 items-center  w-full p-2 border border-gray-300 rounded-xl space-y-3">
-                        <img src={stack.icon} alt="" className=" w-10 rounded-lg" />
-                        <div className="p-1">
-                        <h3 className="font-semibold text-[15px]">{stack.name}</h3> 
-                        <p className="font-semibold text-[12px] text-[#94A3B8]">{stack.category}</p>
-                        </div>
-                        <MdClear className="md:ml-42 ml-100" />
-                    </div>
-                )}
-             </div> */}
 
              {addStack.length > 0 ? <div className=" space-y-2 my-2 w-full">
                 {addStack.map(stack => 
@@ -35,7 +30,7 @@ const YourStack = ({addStack, setAddStack}:StackProps) => {
                             <h3 className="font-semibold md:text-[15px] text-[18px]">{stack.name}</h3> 
                             <p className="font-semibold md:text-[12px]text-[14px] text-[#94A3B8]">{stack.category}</p>
                         </div>
-                       <MdClear className=" w-[5%]  cursor-pointer" />
+                       <MdClear onClick={()=>handleStack(stack)} className=" w-[5%] cursor-pointer" />
                        
                     </div>
                 )}

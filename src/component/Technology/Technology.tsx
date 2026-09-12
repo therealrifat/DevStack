@@ -4,6 +4,8 @@ import type { Itechnology } from "../../TechnologyType";
 import { use, useState, } from "react";
 import TechnologyCard from "./TechnologyCard";
 import YourStack from "./YourStack";
+
+
 interface TechnoProps {
     dataPromise: Promise<Itechnology[]>
 }
@@ -12,7 +14,7 @@ interface TechnoProps {
 
 const Technology = ({dataPromise}:TechnoProps) => {
     const stacksData = use(dataPromise)
-    const [addStack, setAddStack] =useState([])
+    const [addStack, setAddStack] =useState<Itechnology[]>([])
     
     console.log(addStack)
    
