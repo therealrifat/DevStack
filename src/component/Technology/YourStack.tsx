@@ -27,15 +27,16 @@ const YourStack = ({addStack, setAddStack}:StackProps) => {
                 )}
              </div> */}
 
-             {addStack.length > 0 ? <div className=" space-y-2 my-2">
+             {addStack.length > 0 ? <div className=" space-y-2 my-2 w-full">
                 {addStack.map(stack => 
-                    <div className="flex gap-2 items-center  w-full p-2 border border-gray-300 rounded-xl space-y-3">
-                        <img src={stack.icon} alt="" className=" w-10 rounded-lg" />
-                        <div className="p-1">
-                        <h3 className="font-semibold text-[15px]">{stack.name}</h3> 
-                        <p className="font-semibold text-[12px] text-[#94A3B8]">{stack.category}</p>
+                    <div className="flex gap-2  items-center  p-2 border border-gray-300 rounded-xl py-3">
+                        <img src={stack.icon} alt="" className=" md:w-[15%] w-[8%] rounded-lg" />
+                        <div className="p-1 text-left w-[80%]">
+                            <h3 className="font-semibold md:text-[15px] text-[18px]">{stack.name}</h3> 
+                            <p className="font-semibold md:text-[12px]text-[14px] text-[#94A3B8]">{stack.category}</p>
                         </div>
-                        <MdClear className="md:ml-42 ml-100" />
+                       <MdClear className=" w-[5%]  cursor-pointer" />
+                       
                     </div>
                 )}
              </div>  : <div className="border border-gray-300 rounded-xl my-2">
