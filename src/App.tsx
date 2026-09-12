@@ -14,7 +14,7 @@ const dataFetch = async():Promise<Itechnology[]>=>{
 
 function App() {
  const dataPromise = dataFetch()
- console.log(dataPromise)
+
   return (
     <>
       <Navbar />

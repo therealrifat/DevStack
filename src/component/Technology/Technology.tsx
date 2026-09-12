@@ -16,7 +16,7 @@ const Technology = ({dataPromise}:TechnoProps) => {
     const stacksData = use(dataPromise)
     const [addStack, setAddStack] =useState<Itechnology[]>([])
     
-    console.log(addStack)
+    
    
     return (
         <div className="md:max-w-11/12  mx-auto w-191 md:w-full">
