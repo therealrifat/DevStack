@@ -19,7 +19,7 @@ function App() {
     <>
       <Navbar />
       <BannerSection />
-      <Suspense>
+      <Suspense fallback="Loading Please wait">
         <Technology dataPromise={dataPromise} />
 
       </Suspense>
