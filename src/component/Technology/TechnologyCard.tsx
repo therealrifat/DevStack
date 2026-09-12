@@ -1,6 +1,7 @@
 import { FaStar } from "react-icons/fa";
 import type { Itechnology } from "../../TechnologyType";
 import { useState, type Dispatch, type SetStateAction, } from "react";
+import { RxCheck } from "react-icons/rx";
 interface StackProps {
     stack: Itechnology
     addStack: Itechnology[]
@@ -24,7 +25,7 @@ const TechnologyCard = ({stack, addStack, setAddStack}:StackProps) => {
 
             <div className="flex  justify-between ">
                 <div><img src={stack.icon} alt="" className=" md:w-6.25 w-8 " /></div>
-                <span className=" text-[#0EA5E9] px-2  py-2 items-center text-[14px] bg-[#ECFEFF] border border-gray-300 rounded-2xl">{stack.badge}</span>
+                <span className=" text-[#0EA5E9] px-2  py-1 items-center text-[13px] bg-[#ECFEFF] border border-gray-300 rounded-xl">{stack.badge}</span>
             </div>
             <h3>{stack.name}</h3>
             <p>{stack.description}</p>
@@ -33,7 +34,7 @@ const TechnologyCard = ({stack, addStack, setAddStack}:StackProps) => {
                 <span>{stack.difficulty}</span>
                 <span className="flex items-center gap-1.5"> <FaStar /> {stack.rating}</span>
             </div>
-            <button disabled={addStack.includes(stack)} onClick={()=>handlesStackCart(true)} className={` ${buttonType ? "cursor-not-allowed" : "cursor-pointer"} bg-black text-white py-3 md:px-20 px-53 rounded-md mx-auto flex mt-6 md:text-[15px] text-[18px]`}>{addStack.includes(stack) ? "Added to Stack": "Add to Stack"}</button>
+            <button disabled={addStack.includes(stack)} onClick={()=>handlesStackCart(true)} className={`${addStack.includes(stack) ? " cursor-not-allowed bg-gray-300 " : "cursor-pointer"} bg-black text-white py-3 md:px-20 px-53 rounded-md mx-auto flex mt-6 md:text-[15px] text-[18px]`}>{addStack.includes(stack) ?   <span className="flex items-center gap-2"> <RxCheck className="text-lg" /> Added to card</span> : "Add to Stack"}</button>
         </div>
     );
 };
