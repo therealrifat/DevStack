@@ -1,7 +1,7 @@
 
 import type { Itechnology } from "../../TechnologyType";
 
-import { use, } from "react";
+import { use, useState, } from "react";
 import TechnologyCard from "./TechnologyCard";
 import YourStack from "./YourStack";
 interface TechnoProps {
@@ -12,9 +12,9 @@ interface TechnoProps {
 
 const Technology = ({dataPromise}:TechnoProps) => {
     const stacksData = use(dataPromise)
-
+    const [addStack, setAddStack] =useState([])
     
-
+    console.log(addStack)
    
     return (
         <div className="md:max-w-11/12  mx-auto w-191 md:w-full">
@@ -25,10 +25,10 @@ const Technology = ({dataPromise}:TechnoProps) => {
 
            <div className=" flex md:flex-row flex-col md:gap-3  md:space-y-3 space-y-7">
                 <div className="grid md:grid-cols-3 grid-cols-1  mx-auto space-y-2 md:gap-5   ">
-                    {stacksData.map(stack =>  <TechnologyCard  stack={stack}  />)}
+                    {stacksData.map(stack =>  <TechnologyCard key={stack.id} stack={stack}  addStack={addStack} setAddStack={setAddStack} />)}
                 </div>
                 <div className="mx-auto md:mx-0">
-                    <YourStack />
+                    <YourStack addStack={addStack} setAddStack={setAddStack} />
                 </div>
            </div>
            

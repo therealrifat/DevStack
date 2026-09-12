@@ -1,17 +1,21 @@
 import { FaStar } from "react-icons/fa";
 import type { Itechnology } from "../../TechnologyType";
-import { useState, } from "react";
+import { useState, type Dispatch, type SetStateAction, } from "react";
 interface StackProps {
     stack: Itechnology
-   
+    addStack: Itechnology[]
+   setAddStack: Dispatch<SetStateAction<Itechnology[]>>
 
 }
 
-const TechnologyCard = ({stack}:StackProps) => {
+const TechnologyCard = ({stack, addStack, setAddStack}:StackProps) => {
     const [buttonType, setButtonType]=useState(false)
 
     const handlesStackCart =(type: boolean)=>{
+
         setButtonType(type)
+        setAddStack([...addStack, stack])
+
     }
 
     return (
@@ -28,7 +32,7 @@ const TechnologyCard = ({stack}:StackProps) => {
                 <span>{stack.difficulty}</span>
                 <span className="flex items-center gap-1.5"> <FaStar /> {stack.rating}</span>
             </div>
-            <button onClick={()=>handlesStackCart(true)} className="bg-black text-white py-3 md:px-20 px-55 rounded-md mx-auto flex mt-6 md:text-[15px] text-[18px] ">{buttonType ? "Added to Stack": "Add to Stack"}</button>
+            <button disabled={buttonType} onClick={()=>handlesStackCart(true)} className={` ${buttonType ? "cursor-not-allowed" : "cursor-pointer"} bg-black text-white py-3 md:px-20 px-53 rounded-md mx-auto flex mt-6 md:text-[15px] text-[18px]`}>{buttonType ? "Added to Stack": "Add to Stack"}</button>
         </div>
     );
 };
