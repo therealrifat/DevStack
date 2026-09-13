@@ -28,7 +28,7 @@ const YourStack = ({avStack, addStack, setAddStack}:StackProps) => {
                  <p className="font-semibold md:text-[12px]text-[14px] text-[#94A3B8]">{avStack.category}</p>
             </div>
             <MdClear onClick={()=>handleStack(avStack)} className=" w-[5%] cursor-pointer" />
-
+             
         </div>
     
             

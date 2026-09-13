@@ -32,7 +32,7 @@ const TechnologyCard = ({stack, addStack, setAddStack}:StackProps) => {
                 <span>{stack.difficulty}</span>
                 <span className="flex items-center gap-1.5"> <FaStar /> {stack.rating}</span>
             </div>
-            <button disabled={addStack.includes(stack)} onClick={handlesStackCart} className={`${addStack.includes(stack) ? " cursor-not-allowed bg-gray-300 " : "cursor-pointer"} bg-black text-white py-3 md:px-20 px-53 rounded-md mx-auto flex mt-6 md:text-[15px] text-[18px]`}>{addStack.includes(stack) ?   <span className="flex items-center gap-2"> <RxCheck className="text-lg" /> Added to card</span> : "Add to Stack"}</button>
+            <button disabled={addStack.includes(stack)} onClick={handlesStackCart} className={`${addStack.includes(stack) ? " cursor-not-allowed bg-gray-300 " : "cursor-pointer"} bg-black text-white py-3 md:px-20 px-53 rounded-md mx-auto flex mt-6 md:text-[15px] text-[16px]`}>{addStack.includes(stack) ?   <span className="flex items-center gap-2"> <RxCheck className="text-lg" /> Added to card</span> : "Add to Stack"}</button>
         </div>
     );
 };

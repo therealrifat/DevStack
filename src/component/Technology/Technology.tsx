@@ -14,6 +14,9 @@ interface TechnoProps {
 const Technology = ({dataPromise}:TechnoProps) => {
     const stacksData = use(dataPromise)
     const [addStack, setAddStack] =useState<Itechnology[]>([])
+    const handleAllCardRemove =()=>{
+        setAddStack([])
+    }
     
     
    
@@ -31,7 +34,7 @@ const Technology = ({dataPromise}:TechnoProps) => {
 
                 {/* staart yourcart section */}
                 <div>
-                    <div className=" border border-gray-300 md:w-87.5 w-150 rounded-2xl p-3 h-auto ">
+                    <div className=" border border-gray-300 md:w-87.5 w-150 rounded-2xl p-3 mx-auto ">
 
                         <div className="mx-auto md:mx-0">
                             <h3 className="font-semibold text-[20px]">Your Stack</h3>
@@ -40,6 +43,10 @@ const Technology = ({dataPromise}:TechnoProps) => {
                                 {addStack.length > 0 ? addStack.map(avStack => <YourStack key={avStack.id} avStack={avStack} addStack={addStack} setAddStack={setAddStack} /> ) : <div className="border border-gray-300 rounded-xl my-2">
                                 <p className=" py-10 text-center text-gray-400">Your stack is empty.</p>
                                 </div>}
+                            </div>
+
+                            <div className="flex justify-center">
+                                <button onClick={handleAllCardRemove} className="text-red-600 font-semibold text-lg border border-gray-300 py-1 px-15 rounded-lg">Remove All</button>
                             </div>
                         </div>
                     </div>
