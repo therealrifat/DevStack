@@ -3,6 +3,7 @@ import type { Itechnology } from "../../TechnologyType";
 import { use, useState, } from "react";
 import TechnologyCard from "./TechnologyCard";
 import YourStack from "./YourStack";
+import { Bounce, toast } from "react-toastify";
 
 
 interface TechnoProps {
@@ -16,6 +17,17 @@ const Technology = ({dataPromise}:TechnoProps) => {
     const [addStack, setAddStack] =useState<Itechnology[]>([])
     const handleAllCardRemove =()=>{
         setAddStack([])
+        toast.error(`Removed All Stack from YourStack`, {
+        position: "bottom-right",
+        autoClose: 3500,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Bounce,
+      })
     }
     
     

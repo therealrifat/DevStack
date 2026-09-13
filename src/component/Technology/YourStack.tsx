@@ -2,6 +2,7 @@ import { MdClear } from "react-icons/md";
 
 import type { Dispatch, SetStateAction } from "react";
 import type { Itechnology } from "../../TechnologyType";
+import { Bounce, toast } from "react-toastify";
 
 
 interface StackProps {
@@ -15,7 +16,20 @@ const YourStack = ({avStack, addStack, setAddStack}:StackProps) => {
 
     const handleStack =(technoCard :Itechnology) =>{
         const removeStack = addStack.filter(stack => stack !== technoCard)
+        
         setAddStack(removeStack)
+        toast.error(`${technoCard.name} removed from YourStack`, {
+        position: "bottom-right",
+        autoClose: 3500,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Bounce,
+      })
+
     }
 
 

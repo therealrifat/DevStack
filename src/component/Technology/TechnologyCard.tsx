@@ -1,6 +1,7 @@
 import { FaStar } from "react-icons/fa";
 import type { Itechnology } from "../../TechnologyType";
 import { type Dispatch, type SetStateAction, } from "react";
+import { Bounce, toast } from "react-toastify";
 
 interface StackProps {
     stack: Itechnology
@@ -14,6 +15,17 @@ const TechnologyCard = ({stack, addStack, setAddStack}:StackProps) => {
 
     const handlesStackCart =()=>{        
         setAddStack([...addStack, stack])
+        toast.success(`${stack.name} Added to Stack`, {
+        position: "bottom-right",
+        autoClose: 3500,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Bounce,
+      })
 
     }
 
