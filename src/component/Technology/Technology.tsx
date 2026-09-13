@@ -1,6 +1,5 @@
 
 import type { Itechnology } from "../../TechnologyType";
-
 import { use, useState, } from "react";
 import TechnologyCard from "./TechnologyCard";
 import YourStack from "./YourStack";
@@ -29,9 +28,23 @@ const Technology = ({dataPromise}:TechnoProps) => {
                 <div className="grid md:grid-cols-3 grid-cols-1  mx-auto space-y-2 md:gap-5   ">
                     {stacksData.map(stack =>  <TechnologyCard key={stack.id} stack={stack}  addStack={addStack} setAddStack={setAddStack} />)}
                 </div>
-                <div className="mx-auto md:mx-0">
-                    <YourStack addStack={addStack} setAddStack={setAddStack} />
+
+                {/* staart yourcart section */}
+                <div>
+                    <div className=" border border-gray-300 md:w-87.5 w-150 rounded-2xl p-3 h-auto ">
+
+                        <div className="mx-auto md:mx-0">
+                            <h3 className="font-semibold text-[20px]">Your Stack</h3>
+                            <p className=" text-[#475569]">{addStack.length > 0 ? `${addStack.length} Technology Selected` : "No technologies selected yet."} </p>
+                            <div className="space-y-2 my-2 w-full">
+                                {addStack.length > 0 ? addStack.map(avStack => <YourStack key={avStack.id} avStack={avStack} addStack={addStack} setAddStack={setAddStack} /> ) : <div className="border border-gray-300 rounded-xl my-2">
+                                <p className=" py-10 text-center text-gray-400">Your stack is empty.</p>
+                                </div>}
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                
            </div>
            
 

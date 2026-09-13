@@ -1,6 +1,6 @@
 import { FaStar } from "react-icons/fa";
 import type { Itechnology } from "../../TechnologyType";
-import { useState, type Dispatch, type SetStateAction, } from "react";
+import { type Dispatch, type SetStateAction, } from "react";
 import { RxCheck } from "react-icons/rx";
 interface StackProps {
     stack: Itechnology
@@ -10,11 +10,9 @@ interface StackProps {
 }
 
 const TechnologyCard = ({stack, addStack, setAddStack}:StackProps) => {
-    const [buttonType, setButtonType]=useState(false)
+    
 
-    const handlesStackCart =(type: boolean)=>{
-
-        setButtonType(type)
+    const handlesStackCart =()=>{        
         setAddStack([...addStack, stack])
 
     }
@@ -34,7 +32,7 @@ const TechnologyCard = ({stack, addStack, setAddStack}:StackProps) => {
                 <span>{stack.difficulty}</span>
                 <span className="flex items-center gap-1.5"> <FaStar /> {stack.rating}</span>
             </div>
-            <button disabled={addStack.includes(stack)} onClick={()=>handlesStackCart(true)} className={`${addStack.includes(stack) ? " cursor-not-allowed bg-gray-300 " : "cursor-pointer"} bg-black text-white py-3 md:px-20 px-53 rounded-md mx-auto flex mt-6 md:text-[15px] text-[18px]`}>{addStack.includes(stack) ?   <span className="flex items-center gap-2"> <RxCheck className="text-lg" /> Added to card</span> : "Add to Stack"}</button>
+            <button disabled={addStack.includes(stack)} onClick={handlesStackCart} className={`${addStack.includes(stack) ? " cursor-not-allowed bg-gray-300 " : "cursor-pointer"} bg-black text-white py-3 md:px-20 px-53 rounded-md mx-auto flex mt-6 md:text-[15px] text-[18px]`}>{addStack.includes(stack) ?   <span className="flex items-center gap-2"> <RxCheck className="text-lg" /> Added to card</span> : "Add to Stack"}</button>
         </div>
     );
 };
