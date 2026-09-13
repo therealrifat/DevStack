@@ -31,10 +31,10 @@ React Question Answarer
 * **Why map() lists need a unique key prop**  it helps react track which item change were added were remove 
 
 * **what conditonal rendering** displaying deffernet UI elements based on whether a condition is true or false.
+```
+example: {addStack.length > 0 ? addStack.map(avStack => <YourStack key={avStack.id} avStack={avStack} addStack={addStack} setAddStack={setAddStack} /> ) : <div className="border border-gray-300 rounded-xl my-2"><p className=" py-10 text-center text-gray-400">Your stack is empty.</p></div>}
 
-example: {items.length === 0 && <p>The stack is empty</p>}
-
-
+```
 * **Data passing between Parent and Child** Parent ==> Child: Passed down using props  title="Hello" | Child ==> Parent The parent passes a callback function via props, and the child calls it with data ( props.onSelect(data)).
 
 
