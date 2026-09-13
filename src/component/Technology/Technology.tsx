@@ -27,8 +27,8 @@ const Technology = ({dataPromise}:TechnoProps) => {
                  <p className="text-[#475569] md:text-[18px] text-2xl">Pick one technology per category to build your ideal stack.</p>
            </div>
 
-           <div className=" flex md:flex-row flex-col md:gap-3  md:space-y-3 space-y-7">
-                <div className="grid md:grid-cols-3 grid-cols-1  mx-auto space-y-2 md:gap-5   ">
+           <div className=" flex lg:flex-row flex-col lg:gap-2  md:gap-3  Lg:space-y-3 space-y-7">
+                <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 mx-auto space-y-2 lg:gap-4 md:gap-3 sm:gap-2   ">
                     {stacksData.map(stack =>  <TechnologyCard key={stack.id} stack={stack}  addStack={addStack} setAddStack={setAddStack} />)}
                 </div>
 
@@ -36,7 +36,7 @@ const Technology = ({dataPromise}:TechnoProps) => {
                 <div>
                     <div className=" border border-gray-300 md:w-87.5 w-150 rounded-2xl p-3 mx-auto ">
 
-                        <div className="mx-auto md:mx-0">
+                        <div className="mx-auto lg:mx-0">
                             <h3 className="font-semibold text-[20px]">Your Stack</h3>
                             <p className=" text-[#475569]">{addStack.length > 0 ? `${addStack.length} Technology Selected` : "No technologies selected yet."} </p>
                             <div className="space-y-2 my-2 w-full">

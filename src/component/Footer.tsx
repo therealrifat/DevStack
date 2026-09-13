@@ -2,7 +2,7 @@ import footerImage from '../assets/logo-text.png'
 
 const Footer = () => {
     return (
-        <div className="w-191 md:w-full md:max-w-11/12 mx-auto mt-50 space-y-3">
+        <div className="w-191 md:w-full md:max-w-11/12 mx-auto mt-50 space-y-3 ">
            <div className='flex flex-row justify-center  md:justify-between'>
                 <div className=' space-y-4  '>
                     <img src={footerImage} alt="" className='mx-auto md:mx-0' />
@@ -13,7 +13,8 @@ const Footer = () => {
                         <li className='list-disc md:list-none'><a href="#">LinkedIn</a></li>
                     </ul>
                 </div>
-                <div className=' hidden md:inline'>
+                <div className='flex gap-3'>
+                    <div className=' hidden md:inline '>
                     <h4>PRODUCT </h4>
                     <ul className='  text-[#64748B]'>
                         <li><a href="#">Home </a></li>
@@ -29,12 +30,13 @@ const Footer = () => {
                         <li><a href="#">Careers </a></li>
                     </ul>
                 </div>
-                <div className='hidden md:inline'>
+                <div className=' hidden md:inline'>
                     <h4>LEGAL</h4>
                     <ul className='text-[#64748B]'>
                          <li><a href="#">Privacy Policy </a></li>
                         <li><a href="#">Terms of Service</a></li>
                     </ul>
+                </div>
                 </div>
            </div>
            <div className='flex justify-between py-5 px-5 md:px-0 text-[#64748b]'>
