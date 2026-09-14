@@ -57,9 +57,9 @@ const Technology = ({dataPromise}:TechnoProps) => {
                                 </div>}
                             </div>
 
-                            <div className="flex justify-center">
+                           {addStack.length > 0 ? <div className="flex justify-center">
                                 <button onClick={handleAllCardRemove} className="text-red-600 font-semibold text-lg border border-gray-300 py-1 px-15 rounded-lg">Remove All</button>
-                            </div>
+                            </div> : ""}
                         </div>
                     </div>
                 </div>
