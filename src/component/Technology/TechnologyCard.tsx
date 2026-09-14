@@ -31,7 +31,7 @@ const TechnologyCard = ({stack, addStack, setAddStack}:StackProps) => {
 
 
     return (
-        <div  className={`md:w-82 w-150 md:h-auto border ${addStack.includes(stack) ? " border-2 border-black" : "border-gray-300" }  rounded-2xl p-5 space-y-3`}>
+        <div  className={`md:w-82 w-150 md:h-auto border ${addStack.includes(stack) ? " border-2 border-black" : "border-gray-300" }  rounded-2xl p-5 space-y-3 hover:scale-105 transition duration-300 ease-in-out`}>
 
             <div className="flex  justify-between ">
                 <div><img src={stack.icon} alt="" className=" md:w-6.25 w-8 " /></div>

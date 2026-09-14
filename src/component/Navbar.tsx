@@ -3,7 +3,7 @@ import menuIcon from '../assets/hamburger.png'
 
 const Navbar = () => {
     return (
-        <nav className='w-191  mx-2 md:w-full flex justify-between p-5 items-center md:max-w-11/12 md:mx-auto sticky top-0 bg-white'>
+        <nav className='w-191  mx-2 md:w-full flex justify-between p-5 items-center md:max-w-11/12 md:mx-auto sticky top-0 bg-white z-40'>
             <img src={menuIcon} alt=""  className=' w-10 md:hidden'/>
             <img src={navLogo} alt=""  className='w-40 md:w-40' />
             <ul className=' hidden md:flex gap-7 text-md text-[#475569]'>
