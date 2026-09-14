@@ -31,7 +31,7 @@ const TechnologyCard = ({stack, addStack, setAddStack}:StackProps) => {
 
 
     return (
-        <div  className={`md:w-82 w-150 md:h-auto border ${addStack.includes(stack) ? " border-2 border-black" : "border-gray-300" }  rounded-2xl p-5 space-y-3 hover:scale-105 transition duration-300 ease-in-out`}>
+        <div  className={`md:w-82 w-150 md:h-auto border ${addStack.includes(stack) ? " border-2 border-black" : "border-gray-300" }  rounded-2xl p-5 space-y-3 hover:scale-102 transition duration-300 ease-in-out`}>
 
             <div className="flex  justify-between ">
                 <div><img src={stack.icon} alt="" className=" md:w-6.25 w-8 " /></div>
@@ -44,7 +44,7 @@ const TechnologyCard = ({stack, addStack, setAddStack}:StackProps) => {
                 <span>{stack.difficulty}</span>
                 <span className="flex items-center gap-1.5"> <FaStar /> {stack.rating}</span>
             </div>
-            <button disabled={addStack.includes(stack)} onClick={handlesStackCart} className={`${addStack.includes(stack) ? " cursor-not-allowed bg-gray-300 " : "cursor-pointer"} bg-btn-black text-white py-3 md:px-20 px-53 rounded-md mx-auto flex mt-6 md:text-[15px] text-[16px]`}>{addStack.includes(stack) ?   <span className="flex items-center gap-2"> ✓ Added to Stack </span> : "Add to Stack"}</button>
+            <button disabled={addStack.includes(stack)} onClick={handlesStackCart} className={`${addStack.includes(stack) ? " cursor-not-allowed bg-gray-300 text-pink-700 font-semibold " : "cursor-pointer  bg-btn-black  text-white"}  py-3 md:px-20 px-53 rounded-md mx-auto flex mt-6 md:text-[15px] text-[16px]`}>{addStack.includes(stack) ?   <span className="flex items-center gap-2"> ✓ Added to Stack </span> : "Add to Stack"}</button>
         </div>
     );
 };

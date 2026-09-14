@@ -17,7 +17,7 @@ const Technology = ({dataPromise}:TechnoProps) => {
     const [addStack, setAddStack] =useState<Itechnology[]>([])
     const handleAllCardRemove =()=>{
         setAddStack([])
-        toast.error(`Removed All Stack from YourStack`, {
+        toast.error(`All Cleared from Your Stack`, {
         position: "bottom-right",
         autoClose: 3500,
         hideProgressBar: false,

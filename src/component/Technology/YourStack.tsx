@@ -18,7 +18,7 @@ const YourStack = ({avStack, addStack, setAddStack}:StackProps) => {
         const removeStack = addStack.filter(stack => stack !== technoCard)
         
         setAddStack(removeStack)
-        toast.error(`${technoCard.name} removed from YourStack`, {
+        toast.error(`${technoCard.name} Removed from Your Stack`, {
         position: "bottom-right",
         autoClose: 3500,
         hideProgressBar: false,
