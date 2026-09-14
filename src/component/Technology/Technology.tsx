@@ -34,10 +34,10 @@ const Technology = ({dataPromise}:TechnoProps) => {
    
     return (
         <div className="md:max-w-11/12  mx-auto w-191 md:w-full">
-           <div className=" md:text-left text-center my-10 space-y-2">
+           {/* <div className=" md:text-left text-center my-10 space-y-2">
                  <h2 className="md:text-4xl text-5xl font-bold ">Explore the <span className="text-pink-500">Technologies</span></h2>
                  <p className="text-[#475569] md:text-[18px] text-2xl">Pick one technology per category to build your ideal stack.</p>
-           </div>
+           </div> */}
 
            <div className=" flex lg:flex-row flex-col lg:gap-2  md:gap-3  Lg:space-y-3 space-y-7">
                 <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 mx-auto space-y-2 lg:gap-4 md:gap-3 sm:gap-2   ">

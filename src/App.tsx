@@ -19,9 +19,8 @@ function App() {
     <>
       <Navbar />
       <BannerSection />
-      <Suspense fallback="Loading Please wait">
+      <Suspense  fallback={<> <h2 className="text-center">Loading Please wait</h2></>}>
         <Technology dataPromise={dataPromise} />
-
       </Suspense>
       <Footer />
     </>
